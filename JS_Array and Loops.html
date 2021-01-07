@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<style>
+     img{width:300px;height:300px;}
+</style>
+
+<script>
+
+function changeIMG(){
+  var seasons=document.getElementById("seasonsTF").value;
+  document.getElementById("p1").innerHTML=seasons;
+  if((seasons=="summer") || (seasons=="Summer"))
+  {
+   document.getElementById("p1").innerHTML=seasons;
+   document.getElementById("i1").src="nature7.jpg";
+  }
+  else if((seasons=="winter") || (seasons=="Winter"))
+  {
+   document.getElementById("p1").innerHTML=seasons;
+   document.getElementById("i1").src="winter.jpg";
+  }
+  else if((seasons=="rainy") || (seasons=="Rainy"))
+  {
+   document.getElementById("p1").innerHTML=seasons;
+   document.getElementById("i1").src="rainy.jpg";
+  }
+  else if((seasons=="autumn") || (seasons=="Autumn")) 
+  {
+   document.getElementById("p1").innerHTML=seasons;
+   document.getElementById("i1").src="autumn.jpg";
+  }
+else{
+   document.getElementById("p1").innerHTML=seasons;
+   document.getElementById("i1").src="Nature2.jpg";
+   }
+}
+function chgIMG(){
+  var seasons=document.getElementById("seasonsTF").value;
+
+  switch(seasons.toLowerCase()){
+     case "summer": document.getElementById("i2").src="nature7.jpg";
+                    break;# JUMP Statement
+     case "rainy":  document.getElementById("i2").src="rainy.jpg";
+                    break;
+     case "autumn": document.getElementById("i2").src="autumn.jpg";
+                    break;
+     case "winter":  document.getElementById("i2").src="winter.jpg";
+                    break;
+     default: document.getElementById("i2").src="Nature2.jpg";
+
+}
+}
+/*function chgImgArray(){
+var ImgArray=["summer.jpg","winter.jpg","autumn.jpg","rainy.jpg","Nature1.jpg","seasons.jpg"];
+for(var i=0; i<ImgArray.length;++i){
+document.getElementById("i3").src=setTimeout(ImgArray[i],3000);
+}
+} 
+}*/
+</script>
+</head>
+
+
+<body>
+<table border=0 cellspacing=50>
+<tr>
+  <td><img src="seasons.jpg" id="i1"></img><p id="p1"></p></td>
+  <td><img src="Nature1.jpg" id="i2"></img><p id="p2"></p></td>
+  <td><img src="Nature3.jpg" id="i3"></img></td></tr>
+
+<tr><td>Using IF condition</td><td>Using Switch</td><td>Using Array</td></tr>
+</table>
+
+<input type="text" id="seasonsTF"></input>
+
+<button type="button" id="b1" onclick="changeIMG()">Check Array</button>
+<button type="button" id="b2" onclick="chgIMG()">Check Switch</button>
+<button type="button" id="b3" onclick="chgImgArray()">RunArray</button>
+<textarea id="w3review" name="ArrayCHecking" rows="4" cols="50">
+</body>
+</html>
